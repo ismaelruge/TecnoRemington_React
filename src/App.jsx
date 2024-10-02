@@ -1,10 +1,10 @@
 import React from 'react';
-import MainContainer from '../containers/MainContainer';
+import Home from './pages/Home';
 
 const App = () => {
     return (
         <div>
-            <MainContainer />
+            <Home />
         </div>
     );
 };

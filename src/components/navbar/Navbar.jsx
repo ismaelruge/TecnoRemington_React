@@ -7,7 +7,7 @@ const Navbar = () => {
                 <div className="container">
                     <a className="navbar-brand d-flex align-items-center" href="#">
                         <span className="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon">
-                            <img className="rounded img-fluid" src={require('../../assets/logo.jpeg')} width="40" height="30" alt="Logo" />
+                            <img className="rounded img-fluid" src={require('../../assets/Logos/logo.jpeg')} width="40" height="30" alt="Logo" />
                         </span>
                         <span>TecnoRemington</span>
                     </a>

@@ -43,8 +43,8 @@ const ContactUs = () => {
                     <div className="row">
                         <div className="col-md-6 col-xl-6 col-xxl-4 offset-md-6 offset-xl-7 offset-xxl-8">
                             <div>
-                                <form id="formContact" className="border rounded shadow p-3 p-md-4 p-lg-5"  onSubmit={handleSubmit} style={{background: 'var(--bs-body-bg);'}} >
-                                    <h3 className="text-center mb-3"><span style={{color: 'var(--bs-secondary-color);'}} >Contáctenos</span></h3>
+                                <form id="formContact" className="border rounded shadow p-3 p-md-4 p-lg-5"  onSubmit={handleSubmit} style={{background: 'var(--bs-body-bg)'}} >
+                                    <h3 className="text-center mb-3"><span style={{ color: 'var(--bs-secondary-color)' }}>Contáctenos</span></h3>
                                     <div className="mb-3"><input className="form-control" type="text" id="nameContact" name="name" placeholder="Nombre Completo" value={name} onChange={(e) => setName(e.target.value)} required /></div>
                                     <div className="mb-3"><input className="form-control" type="email" id="emailContact" name="email" placeholder="Correo Electrónico" value={email} onChange={(e) => setEmail(e.target.value)} required /></div>
                                     <div className="mb-3"><textarea className="form-control" name="message" id="messageContact" placeholder="Mensaje" rows="6" value={message} onChange={(e) => setMessage(e.target.value)} required></textarea></div>

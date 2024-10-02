@@ -18,7 +18,7 @@ const Login = () => {
     };
 
     return (
-        <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered">
                 <div className="modal-content">
                     <div className="modal-header">
@@ -28,11 +28,11 @@ const Login = () => {
                     <div className="modal-body">
                         <div className="row">
                             <div className="col-12">
-                                <label className="form-label" for="email">Correo Electrónico</label>
+                                <label className="form-label" htmlFor="email">Correo Electrónico</label>
                                 <input className="form-control mb-3" type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                             </div>
                             <div className="col-12">
-                                <label className="form-label" for="clave">Contraseña</label>
+                                <label className="form-label" htmlFor="clave">Contraseña</label>
                                 <input className="form-control mb-3" type="password" name="clave" id="clave" value={password} onChange={(e) => setPassword(e.target.value)} />
                             </div>
                             <div className="col-auto mx-auto">

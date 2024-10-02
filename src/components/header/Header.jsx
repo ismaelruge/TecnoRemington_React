@@ -2,7 +2,6 @@
 import React from 'react';
 import logo from '../../assets/Logos/logo.jpeg'
 import Login from '../Header/Login/Login'
-import Chatbot from '../Header/Chatbot/Chatbot'
 
 const Header = () => {
     return (
@@ -25,7 +24,6 @@ const Header = () => {
             </header>
 
             <Login />
-            <Chatbot />
         </div>
     );
 };

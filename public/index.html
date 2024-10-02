@@ -7,12 +7,6 @@
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Web site created using create-react-app" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-DyZvA7rVpG5+oq38jZ1g5flfUtGn8I1X1W9n+l+Lkl7r4lB0ZT+Mm/00/DeBmF26"
-      crossorigin="anonymous"
-    />
 
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -29,6 +23,26 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>TecnoRemington</title>
+
+    <script>
+      (function (w, d, s, o, f, js, fjs) {
+          w["botsonic_widget"] = o;
+          w[o] = w[o] || function () {
+              (w[o].q = w[o].q || []).push(arguments);
+          };
+          js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+          js.id = o;
+          js.src = f;
+          js.async = 1;
+          fjs.parentNode.insertBefore(js, fjs);
+      })(window, document, "script", "Botsonic", "https://widget.botsonic.com/CDN/botsonic.min.js");
+      window.onload = function() {
+          Botsonic("init", {
+              serviceBaseUrl: "https://api-azure.botsonic.ai",
+              token: "a57ffab7-633f-486b-8ac2-9e6074f9f8a6",
+          });
+      };
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

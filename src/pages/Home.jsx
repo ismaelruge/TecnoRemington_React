@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../components/Header/Header.jsx'
+import Header from '../components/Header/Head.jsx'
 import Footer from '../components/Footer/Footer.jsx'
 import MainHome from '../components/Home/MainHome.jsx'
 

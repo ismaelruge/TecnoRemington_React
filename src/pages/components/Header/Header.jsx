@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import logo from 'assets/Logos/logo.jpeg'
+import logo from '../../assets/Logos/logo.jpeg'
 import Login from './Login/Login'
 
 const Header = () => {

@@ -11,7 +11,7 @@ Ismael Ruge Gonzalez (Líder del equipo)
 Julian Beltran Torres
 URL Pública
 El proyecto está desplegado y accesible en la siguiente URL:
-https://jolly-hill-09fd4d60f.5.azurestaticapps.net/
+https://witty-pebble-046a6dc0f.5.azurestaticapps.net/
 
 Repositorio GitHub
 El código fuente del proyecto está disponible en GitHub:

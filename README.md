@@ -7,7 +7,7 @@ Proyecto creado en ReactJS
 
 Equipo de Desarrollo
 Diego Alejandro Aulacio Leydenz
-Ismael Ruge Gonzalez (Líder del equipo)
+Ismael Ruge Gonzalez (Líder del e+quipo)
 Julian Beltran Torres
 URL Pública
 El proyecto está desplegado y accesible en la siguiente URL:

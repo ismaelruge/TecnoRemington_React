@@ -9,7 +9,7 @@ const ContactUs = () => {
     const [message, setMessage] = useState('');
 
     // Función para manejar el envío del formulario
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const dtn = {
@@ -20,9 +20,32 @@ const ContactUs = () => {
 
         alert(`Hola ${dtn.nombre}, se te enviará un correo a ${dtn.correo} cuando nuestros asesores hayan analizado tu mensaje, muchas gracias.`);
 
-        setName('');
-        setEmail('');
-        setMessage('');
+        try {
+            const response = await fetch('https://tecnoremington.azurewebsites.net/api/Contactenos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    nombreCompleto: dtn.nombre,
+                    email: dtn.correo,
+                    mensaje: dtn.mensaje,
+                }),
+            });
+
+            if (response.ok) {
+                alert('Mensaje enviado exitosamente.');
+
+                setName('');
+                setEmail('');
+                setMessage('');
+            } else {
+                alert('Hubo un problema al enviar el mensaje.');
+            }
+        } catch (error) {
+            console.error('Error al enviar el mensaje:', error);
+            alert('Error en la conexión con el servidor.');
+        }
     };
 
     return (

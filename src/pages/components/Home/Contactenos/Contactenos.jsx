@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
 
-const ContactUs = () => {
+const Contactenos = () => {
     // Estados para los campos del formulario
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -82,4 +82,4 @@ const ContactUs = () => {
     );
 };
 
-export default ContactUs;
+export default Contactenos;

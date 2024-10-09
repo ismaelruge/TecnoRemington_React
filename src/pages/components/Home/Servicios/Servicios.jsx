@@ -4,7 +4,7 @@ import Tmadre from '../../../assets/productos/Tarjeta_Grafica.jpg'
 import FPoder from '../../../assets/productos/Fuente_Poder.jpg'
 import TGrafica from '../../../assets/productos/Tarjeta_Grafica.jpg'
 
-const Products = () => {
+const Productos = () => {
 
     const btnCompras = (product) => {
         alert(`haz comprado el articulo ${product}`);
@@ -92,4 +92,4 @@ const Products = () => {
     );
 };
 
-export default Products;
+export default Productos;

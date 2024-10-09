@@ -1,9 +1,9 @@
-// Contactenos.test.js
-import { render, screen, fireEvent } from '@testing-library/react';
+/* eslint-disable testing-library/no-wait-for-multiple-assertions */
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Contactenos from './Contactenos';
 
 beforeEach(() => {
-    jest.spyOn(window, 'alert').mockImplementation(() => {});
+    jest.spyOn(window, 'alert').mockImplementation(() => {}); // Simular alertas
     global.fetch = jest.fn(() =>
         Promise.resolve({
             ok: true,
@@ -39,27 +39,32 @@ test('shows success alert and clears form on successful submission', async () =>
 
     fireEvent.click(submitButton);
 
-    expect(fetch).toHaveBeenCalledWith(
-        'https://tecnoremington.azurewebsites.net/api/Contactenos',
-        expect.objectContaining({
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                nombreCompleto: 'Juan Pérez',
-                email: 'juan@example.com',
-                mensaje: 'Este es un mensaje de prueba.',
-            }),
-        })
-    );
+    await waitFor(() => {
+        expect(fetch).toHaveBeenCalledWith(
+            'https://tecnoremington.azurewebsites.net/api/Contactenos',
+            expect.objectContaining({
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    nombreCompleto: 'Juan Pérez',
+                    email: 'juan@example.com',
+                    mensaje: 'Este es un mensaje de prueba.',
+                }),
+            })
+        );
 
-    expect(window.alert).toHaveBeenCalledWith(
-        'Hola Juan Pérez, se te enviará un correo a juan@example.com cuando nuestros asesores hayan analizado tu mensaje, muchas gracias.'
-    );
-    
-    await screen.findByText('Mensaje enviado exitosamente.');
-    expect(nameInput.value).toBe('');
-    expect(emailInput.value).toBe('');
-    expect(messageInput.value).toBe('');
+        expect(window.alert).toHaveBeenCalledWith(
+            'Hola Juan Pérez, se te enviará un correo a juan@example.com cuando nuestros asesores hayan analizado tu mensaje, muchas gracias.'
+        );
+
+        expect(window.alert).toHaveBeenCalledWith('Mensaje enviado exitosamente.');
+    });
+
+    await waitFor(() => {
+        expect(nameInput.value).toBe('');
+        expect(emailInput.value).toBe('');
+        expect(messageInput.value).toBe('');
+    });
 });
 
 test('shows error alert on server error', async () => {
@@ -82,6 +87,7 @@ test('shows error alert on server error', async () => {
 
     fireEvent.click(submitButton);
 
-    await screen.findByText('Hubo un problema al enviar el mensaje.');
-    expect(window.alert).toHaveBeenCalledWith('Hubo un problema al enviar el mensaje.');
+    await waitFor(() => {
+        expect(window.alert).toHaveBeenCalledWith('Hubo un problema al enviar el mensaje.');
+    });
 });

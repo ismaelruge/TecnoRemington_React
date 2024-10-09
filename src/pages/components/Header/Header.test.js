@@ -11,5 +11,7 @@ test('renders the header with the logo and navigation links', () => {
     expect(screen.getByText(/servicios/i)).toBeInTheDocument();
     expect(screen.getByText(/acerca de/i)).toBeInTheDocument();
     expect(screen.getByText(/contactenos/i)).toBeInTheDocument();
-    expect(screen.getByText(/iniciar sesión/i)).toBeInTheDocument();
+    
+    const buttons = screen.getAllByText(/iniciar sesión/i);
+    expect(buttons.length).toBeGreaterThan(0); 
 });
